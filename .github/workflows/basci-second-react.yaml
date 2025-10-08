@@ -1,16 +1,22 @@
-name: basic-second-wrokflow
+name: basic-second-workflow
+
 on: push
+
 jobs:
   test:
-    runs-on: ubantu-latest
+    runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '22'
+
       - name: Install dependencies
         run: npm install
+
       - name: Run tests
         run: npm test
